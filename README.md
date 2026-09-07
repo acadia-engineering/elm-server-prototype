@@ -1,6 +1,6 @@
-# Write servers in Elm (PROTOTYPE)
+# Write servers in Elm
 
-I want to write nice beautiful types in Acadia and use them everywhere!
+I want to write nice beautiful types in Acadia and use them everywhere! This little script runs an Elm program as a simple HTTP server.
 
 ```
 ┌──────┐      ┌──────┐      ┌────────┐
@@ -9,17 +9,12 @@ I want to write nice beautiful types in Acadia and use them everywhere!
   Elm           Elm           Acadia
 ```
 
-This little script runs an Elm program as a simple HTTP server.
-
-
-## Motivation
-
-This is mostly for demonstration purposes. I am having some fun and exploring some design ideas. Hopefully it gives you some idea where Acadia is heading!
+This prototype is mostly for demonstration purposes. I am having some fun and exploring some design ideas. Hopefully it gives you some idea where Acadia is heading!
 
 
 ## Setup
 
-You will need [Elm](https://guide.elm-lang.org/install/elm.html) and [Acadia](https://acadia.engineering/download) installed for this.
+You will need [Elm](https://guide.elm-lang.org/install/elm.html) and [Acadia](https://acadia.engineering/download) and [Node.js](https://nodejs.org/) installed for this.
 
 ```bash
 # Download the Acadia examples, navigate to the 3rd example
