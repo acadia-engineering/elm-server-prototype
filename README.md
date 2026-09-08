@@ -14,7 +14,7 @@ This prototype is mostly for demonstration purposes. I am having some fun and ex
 
 ## Setup
 
-You will need [Elm](https://guide.elm-lang.org/install/elm.html), [Acadia](https://acadia.engineering/download), and [Node.js](https://nodejs.org/) installed for this.
+You will need [Elm 0.19.2](https://guide.elm-lang.org/install/elm.html), [Acadia 0.3.1](https://acadia.engineering/download), and [Node.js](https://nodejs.org/) installed for this.
 
 ```bash
 # Download the Acadia examples, navigate to the 3rd example
