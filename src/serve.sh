@@ -30,7 +30,7 @@ mkdir -p $TMP
 
 ## BUILD
 
-$(cd ~/Documents/database/acadia ; cabal list-bin acadia) make --gen-elm=gen/elm
+acadia make --gen-elm=gen/elm
 
 printf "module Assets exposing (..)\n\ntype alias Elm = { name : String, hash : String }\n\n" > $TMP/Assets.elm
 FILES=""
