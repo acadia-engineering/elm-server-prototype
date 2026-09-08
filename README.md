@@ -1,4 +1,4 @@
-# Experiment with Elm on the server
+# Elm on the Server
 
 I want to write nice beautiful types in Elm and Acadia and use them everywhere! This little script runs an Elm program as a simple HTTP server.
 
@@ -9,7 +9,30 @@ I want to write nice beautiful types in Elm and Acadia and use them everywhere! 
   Elm           Elm           Acadia
 ```
 
-This prototype is mostly for demonstration purposes. I am having some fun and exploring some design ideas. Hopefully it gives you some idea where Acadia is heading!
+It lets you write server code like this:
+
+```elm
+main : Server
+main =
+  Server.serve <| \req ->
+    case req.method of
+      "GET" ->
+        case req.url of
+          "/"        -> ok req Assets.home_elm
+          "/profile" -> ok req Assets.profile_elm
+          "/signup"  -> ok req Assets.signUp_elm
+          "/login"   -> ok req Assets.login_elm
+          "/logout"  -> redirect [clearCookie] "/"
+          path       -> notFound
+
+      "POST" ->
+        Resolver.succeed (Server.proxy "localhost" 9000)
+
+      _ ->
+        notFound_
+```
+
+**This prototype is mostly for demonstration purposes.** I am having some fun and exploring some design ideas. Hopefully it gives you some idea where Acadia is heading!
 
 
 ## Setup
