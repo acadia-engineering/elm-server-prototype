@@ -1,6 +1,6 @@
-# Write servers in Elm
+# Experiment with Elm on the server
 
-I want to write nice beautiful types in Acadia and use them everywhere! This little script runs an Elm program as a simple HTTP server.
+I want to write nice beautiful types in Elm and Acadia and use them everywhere! This little script runs an Elm program as a simple HTTP server.
 
 ```
 ┌──────┐      ┌──────┐      ┌────────┐
@@ -14,7 +14,7 @@ This prototype is mostly for demonstration purposes. I am having some fun and ex
 
 ## Setup
 
-You will need [Elm](https://guide.elm-lang.org/install/elm.html) and [Acadia](https://acadia.engineering/download) and [Node.js](https://nodejs.org/) installed for this.
+You will need [Elm](https://guide.elm-lang.org/install/elm.html), [Acadia](https://acadia.engineering/download), and [Node.js](https://nodejs.org/) installed for this.
 
 ```bash
 # Download the Acadia examples, navigate to the 3rd example
@@ -27,7 +27,9 @@ git clone https://github.com/acadia-engineering/elm-server-prototype.git
 bash elm-server-prototype/serve.sh
 ```
 
-Check out the bash script for yourself! You can tweak it to your liking. The point of this prototype is that it is pretty easy to try things out.
+You can explore this example in detail [here](https://github.com/acadia-engineering/examples/tree/main/03-users).
+
+And check out the bash script for yourself! You can tweak it to your liking. The point of this prototype is that it is pretty easy to try things out. Everything is accomplished with features like [`Platform.worker`](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker) that have been in Elm since 2016.
 
 
 ## API
@@ -140,7 +142,7 @@ Elm and Acadia offer simple code with strong guarantees. No runtime errors, no a
 
 For 90% of your code, you get the simplicity and guarantees you expect from Elm, and for the 10% of cases that need something special, you pick the right tool for the job. Maybe you need mutation and no GC pauses for some high performance code. Maybe you need complex concurrency with immutability and per thread GC for some networking code. Maybe you need a formal proof certain functionality. Etc.
 
-The claim here is that the vast majority of code needed for web apps can live in the secure core, and it is no problem to embed a JS web component or to make an HTTP request to a Rust server now and then!
+The claim here is that the vast majority of code needed for web apps can live in the secure core, and it is no problem to embed a JS web component or to make an HTTP request to a Rust server now and then! Think of Elm and Acadia as the “high speed rail” linking together a comprehensive transportation system.
 
 > **Aside on file I/O**: File systems and databases are both methods of persisting data on disk. Normally databases are defined on top of file systems, but the reverse is also possible. Files are essentially a column of `Bytes`. Directories can be represented as a table of directory/contents relations. Etc.
 >
