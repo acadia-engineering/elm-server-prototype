@@ -1,13 +1,11 @@
 // Adapted from https://github.com/driverdan/node-XMLHttpRequest
 // MIT License, Dan DeFelippi <dan@driverdan.com>
 
-
 import http from 'node:http';
 import https from 'node:https';
 import node_url from 'node:url';
 import fs from 'node:fs';
 
-console.log("HELLO HELLO HELLO HELLO");
 
 global.XMLHttpRequest = class XMLHttpRequest {
   #method = '';
@@ -31,7 +29,6 @@ global.XMLHttpRequest = class XMLHttpRequest {
   response = null;
 
   open(method, url, async) {
-    console.log(method, url, async);
     if (!async) {
       throw new Error('Synchronous XMLHttpRequest not allowed.');
     }
@@ -75,7 +72,6 @@ global.XMLHttpRequest = class XMLHttpRequest {
 
   sendHttp(protocol, defaultPort, data)
   {
-    console.log(defaultPort, data);
     this.#request = protocol.request(this.responseURL, {
       method: this.#method,
       headers: this.#headers,
@@ -97,7 +93,6 @@ global.XMLHttpRequest = class XMLHttpRequest {
           this.responseType == 'arraybuffer'
             ? this.#concat(this.#responseChunks)
             : this.#responseChunks.concat();
-        console.log(this.status, this.statusText, this.response);
         this.onload();
       });
       res.on('error', (err) => { this.#error(err); });
@@ -134,7 +129,6 @@ global.XMLHttpRequest = class XMLHttpRequest {
   }
 
   #concat(chunks) {
-    console.log(chunks);
     if (chunks.length == 1) return chunks[0].buffer;
 
     const buffer = new ArrayBuffer(chunks.reduce((len, chunk) => len + chunk.byteLength, 0));
@@ -148,7 +142,6 @@ global.XMLHttpRequest = class XMLHttpRequest {
   }
 
   #error(err) {
-    console.log(err);
     this.status = 0;
     this.statusText = err;
     this.response = err.stack;
