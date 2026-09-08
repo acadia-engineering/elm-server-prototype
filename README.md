@@ -34,7 +34,7 @@ And check out the bash script for yourself! You can tweak it to your liking. The
 
 ## API
 
-The little bash script creates `Server` and `Resolver` modules that you can use from your server written in Elm.
+The little bash script creates `Server` and `Resolver` modules that you can use from your server written in Elm. Again, check out [this example](https://github.com/acadia-engineering/examples/tree/main/03-users) to see these modules in action.
 
 ```elm
 module Server exposing (..)
@@ -121,12 +121,14 @@ http :
   -> Resolver (Maybe a)
 ```
 
-The resolver type is very limited on purpose. I want to keep the set of possible effects basically aligned with Elm. I have no ambition to add file I/O primitives here. The goal is offer a **secure core**.
+The resolver type is very limited on purpose. I want to keep the set of possible effects basically aligned with Elm. I have no ambition to add file I/O primitives here. The goal is offer a “high-speed rail” network for your programs.
 
 
-## The “Secure Core” Concept
+## High-Speed Rail and the Functional Fast Path
 
-Elm and Acadia offer simple code with strong guarantees. No runtime errors, no aliasing bugs, limited invalid data, limited supply chain attacks, etc. **Write as much code as possible within this “secure core” and drop down into other languages as needed.**
+High-speed rail makes it easy and efficient to move around. It helps link cities and factories, integrating with other transportation systems as needed. Elm and Acadia are uniquely suitable for serving this role in modern web apps.
+
+Elm and Acadia offer simple code with strong guarantees. No runtime errors, no aliasing bugs, limited invalid data, limited supply chain attacks, easy to refactor, helpful error messages, etc. The idea is to **write as much code as possible within this “fast path” and drop down into other languages as needed.**
 
 ```
        ┌────────────────────────┐
@@ -142,7 +144,7 @@ Elm and Acadia offer simple code with strong guarantees. No runtime errors, no a
 
 For 90% of your code, you get the simplicity and guarantees you expect from Elm, and for the 10% of cases that need something special, you pick the right tool for the job. Maybe you need mutation and no GC pauses for some high performance code. Maybe you need complex concurrency with immutability and per thread GC for some networking code. Maybe you need a formal proof certain functionality. Etc.
 
-The claim here is that the vast majority of code needed for web apps can live in the secure core, and it is no problem to embed a JS web component or to make an HTTP request to a Rust server now and then! Think of Elm and Acadia as the “high speed rail” linking together a comprehensive transportation system.
+The claim here is that the vast majority of code needed for web apps can live on the fast path, and it is no problem to embed a JS web component or to make an HTTP request to a Rust server now and then!
 
 > **Aside on file I/O**: File systems and databases are both methods of persisting data on disk. Normally databases are defined on top of file systems, but the reverse is also possible. Files are essentially a column of `Bytes`. Directories can be represented as a table of directory/contents relations. Etc.
 >
