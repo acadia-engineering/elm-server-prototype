@@ -22,7 +22,6 @@ app.ports.responses.subscribe(({ req, res, content }) => {
         method: req.method,
         headers: req.headers
       }, (proxy) => {
-        console.log(proxy.statusCode, proxy.headers);
         res.writeHead(proxy.statusCode, proxy.headers);
         proxy.pipe(res);
       });
