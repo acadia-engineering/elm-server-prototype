@@ -24,7 +24,7 @@ cd 03-users
 
 # run the example
 git clone https://github.com/acadia-engineering/elm-server-prototype.git
-bash elm-server-prototype/serve.sh
+bash elm-server-prototype/src/serve.sh
 ```
 
 You can explore this example in detail [here](https://github.com/acadia-engineering/examples/tree/main/03-users).
