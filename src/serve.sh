@@ -62,5 +62,5 @@ trap "exit" INT TERM
 trap "kill 0" EXIT
 
 acadia serve &
-node ../elm-server/server.js
+node elm-server-prototype/src/server.js
 

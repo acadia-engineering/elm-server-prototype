@@ -1,4 +1,4 @@
-import gen from '../gen/assets/elm.js';
+import gen from '../../gen/assets/elm.js';
 import './XMLHttpRequest.js'
 import http from 'node:http';
 import fs from 'node:fs';
