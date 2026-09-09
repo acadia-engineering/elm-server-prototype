@@ -1,4 +1,4 @@
-# Elm Simple Server ([example](https://github.com/acadia-engineering/examples/tree/main/03-users))
+# Elm Simple Server
 
 I want to write nice beautiful types in Elm and Acadia and use them everywhere! This little script runs an Elm program as a simple HTTP server.
 
@@ -9,7 +9,7 @@ I want to write nice beautiful types in Elm and Acadia and use them everywhere! 
   Elm           Elm           Acadia
 ```
 
-It lets you write server code like this:
+See it in action in this [example application](https://github.com/acadia-engineering/examples/tree/main/03-users). The server code looks like this:
 
 ```elm
 main : Server
