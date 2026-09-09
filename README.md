@@ -52,7 +52,7 @@ bash elm-server-prototype/src/serve.sh
 
 This should run a server at [`http://localhost:3000`](http://localhost:3000) that demonstrates a user sign up flow. You can explore this example in detail [here](https://github.com/acadia-engineering/examples/tree/main/03-users).
 
-And check out the bash script for yourself! You can tweak it to your liking. The point of this prototype is that it is pretty easy to try things out. Everything is accomplished with features like [`Platform.worker`](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker) that have been in Elm since 2016.
+And check out the bash script for yourself! You can tweak it to your liking. The point of this prototype is that it is pretty easy to try things out. It only needs [`Platform.worker`](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker) which has been in Elm since 2016, and I know there are companies that have been running Elm servers using roughly this method for many years.
 
 
 ## API
