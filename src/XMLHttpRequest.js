@@ -9,7 +9,7 @@ import fs from 'node:fs';
 
 global.XMLHttpRequest = class XMLHttpRequest {
   #method = '';
-  #headers = { 'user-agent': 'elm-server', 'accept': '*/*', 'transfer-encoding': 'chunked' };
+  #headers = { 'user-agent': 'elm-simple-server', 'accept': '*/*', 'transfer-encoding': 'chunked' };
   responseURL = '';
   responseType = '';
   withCredentials = false;
