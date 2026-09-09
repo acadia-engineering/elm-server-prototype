@@ -1,4 +1,4 @@
-# Elm on the Server
+# Elm Simple Server
 
 I want to write nice beautiful types in Elm and Acadia and use them everywhere! This little script runs an Elm program as a simple HTTP server.
 
@@ -32,12 +32,14 @@ main =
         notFound_
 ```
 
+Acadia currently only supports Elm and Haskell integration at the moment, so now it is pretty easy to set up the full client/server/database application.
+
 **This prototype is mostly for demonstration purposes.** I am having some fun and exploring some design ideas. Hopefully it gives you some idea where Acadia is heading!
 
 
 ## Setup
 
-You will need [Elm 0.19.2](https://guide.elm-lang.org/install/elm.html), [Acadia 0.3.1](https://acadia.engineering/download), and [Node.js](https://nodejs.org/) installed for this.
+There is a full example of a client/server/database application [here](https://github.com/acadia-engineering/examples/tree/main/03-users). You need [Elm 0.19.2](https://guide.elm-lang.org/install/elm.html), [Acadia 0.3.1](https://acadia.engineering/download), and [Node.js](https://nodejs.org/) installed to run it:
 
 ```bash
 # Download the Acadia examples, navigate to the 3rd example
@@ -46,18 +48,18 @@ cd examples
 cd 03-users
 
 # run the example
-git clone https://github.com/acadia-engineering/elm-server-prototype.git
-bash elm-server-prototype/src/serve.sh
+git clone https://github.com/acadia-engineering/elm-simple-server.git
+bash elm-simple-server/src/serve.sh
 ```
 
-This should run a server at [`http://localhost:3000`](http://localhost:3000) that demonstrates a user sign up flow. You can explore this example in detail [here](https://github.com/acadia-engineering/examples/tree/main/03-users).
+This should run a server at [`http://localhost:3000`](http://localhost:3000) that demonstrates a user sign up flow.
 
-And check out the bash script for yourself! You can tweak it to your liking. The point of this prototype is that it is pretty easy to try things out. It only needs [`Platform.worker`](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker) which has been in Elm since 2016, and I know there are companies that have been running Elm servers using roughly this method for many years.
+From there, read the code and check out the `elm-simple-server` bash script for yourself! You can tweak it to your liking. The point of this prototype is that it is pretty easy to try things out. It uses [`Platform.worker`](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker) which has been in Elm since 2016, and I know there are companies that have been running Elm servers using roughly this method for many years.
 
 
 ## API
 
-The little bash script creates `Server` and `Resolver` modules that you can use from your server written in Elm. Again, check out [this example](https://github.com/acadia-engineering/examples/tree/main/03-users) to see these modules in action.
+This prototype comes with `Server` and `Resolver` modules that you can use from your server written in Elm. Again, check out [this example](https://github.com/acadia-engineering/examples/tree/main/03-users) to see these modules in action.
 
 ```elm
 module Server exposing (..)
