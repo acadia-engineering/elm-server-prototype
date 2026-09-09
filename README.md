@@ -178,11 +178,14 @@ For 90% of your code, you get the simplicity and guarantees you expect from Elm,
 
 The claim here is that the vast majority of code needed for web apps can live on the fast path, and it is no problem to embed a JS web component or to make an HTTP request to a Rust server now and then!
 
-> **Aside on file I/O**: File systems and databases are both methods of persisting data on disk. Normally databases are defined on top of file systems, but the reverse is also possible. Files are essentially a column of `Bytes`. Directories can be represented as a table of directory/contents relations. Etc.
->
-> Acadia goes the database route. It gives us nice structured data, efficient access, and clear versioning policies. It is very much in the spirit of Elm and Acadia to pick a single coherent approach that results in simple code with strong guarantees.
->
-> From there, [distributed file systems](https://en.wikipedia.org/wiki/Comparison_of_distributed_file_systems) like [Ceph](https://en.wikipedia.org/wiki/Ceph_(software)) can handle replication and recovery of practically unlimited amounts of data. These systems can usually be operated over HTTP, and can be ideal for storing images, PDFs, etc. Whatever bulk data you need for your application.
->
-> But when it comes to POSIX file systems on a single machine, many languages do it better than Elm ever could. C makes it easy to use the exact bytes on disk without any allocation overhead at all. Scala uses their type system to give better guarantees about permissions and file handle leaks. Python makes it just plain simple. Drop down into those languages as needed. Write the whole server in those languages as needed. High-speed rail is nice, but it is no replacement for subways, tractors, etc. If you have a farm, use a tractor!
->
+
+## Aside on file I/O
+
+File systems and databases are both methods of persisting data on disk. Normally databases are defined on top of file systems, but the reverse is also possible. Files are essentially a column of `Bytes`. Directories can be represented as a table of directory/contents relations. Etc.
+
+Acadia goes the database route. It gives us nice structured data, efficient access, and clear versioning policies. It is very much in the spirit of Elm and Acadia to pick a single coherent approach that results in simple code with strong guarantees.
+
+From there, [distributed file systems](https://en.wikipedia.org/wiki/Comparison_of_distributed_file_systems) like [Ceph](https://en.wikipedia.org/wiki/Ceph_(software)) can handle replication and recovery of practically unlimited amounts of data. These systems can usually be operated over HTTP, and can be ideal for storing images, PDFs, etc. Whatever bulk data you need for your application.
+
+But when it comes to POSIX file systems on a single machine, many languages do it better than Elm ever could. C makes it easy to use the exact bytes on disk without any allocation overhead at all. Scala uses their type system to give better guarantees about permissions and file handle leaks. Python makes it just plain simple. Drop down into those languages as needed. Write the whole server in those languages as needed. High-speed rail is nice, but it is no replacement for subways, tractors, etc. If you have a farm, use a tractor!
+
