@@ -149,6 +149,13 @@ http :
 The resolver type is very limited on purpose. I want to keep the set of possible effects basically aligned with Elm. I have no ambition to add file I/O primitives here. The goal is offer a “high-speed rail” network for your programs.
 
 
+## Share your Results!
+
+If you start adding to the full client/server/database example [here](https://github.com/acadia-engineering/examples/tree/main/03-users), please share what you end up making! The eventual goal is to have a more robust version of this within Acadia, so the learnings and observations from using this prototype will be very helpful!
+
+
+<br>
+
 ## High-Speed Rail and the Functional Fast Path
 
 High-speed rail makes it easy and efficient to move around. It helps link cities and factories, integrating with other transportation systems as needed. Elm and Acadia are uniquely suitable for serving this role in modern web apps.
